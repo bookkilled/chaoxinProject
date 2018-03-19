@@ -94,17 +94,16 @@ ins,a {
     text-decoration: none;
 }
 
-.cf:after { 
-    content:"\200B"; 
-    display:block; 
-    height:0; 
-    clear:both; 
-} 
-.cf {*zoom:1;}/*IE/7/6*/
+/* .cf:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.cf{*+height:1%;} */
+.cf {overflow: hidden;}
 a:focus{outline:none;}
-
+*{
+	box-sizing: border-box;
+}
 .system {
 	background: #283849;
+	position: relative;
 }
 .header {
 	height: 56px;
@@ -119,10 +118,22 @@ a:focus{outline:none;}
 	line-height: 56px;
 }
 .sidebar {
-	float: left;
+	/* float: left;
 	width: 232px;
 	background: #283849;
-	height: auto;
+	height: auto!important;
+	z-index: 998;
+	display: block;
+	overflow: visible!important; */
+	position: absolute;
+    top: 56px;
+    left: 0;
+    width: 232px;
+    background: #283849;
+    height: auto!important;
+    z-index: 998;
+    display: block;
+    overflow: visible!important;
 }
 .sidebar .menu {
 	padding: 0 2px;
@@ -172,6 +183,21 @@ a:focus{outline:none;}
 	min-height: 663px;
 	background: #f0f3f4;
 	position: relative;
+	overflow: hidden;
+	display: block;
+	/* min-height: 773px;
+	padding: 0 0 50px;
+    background: #F5F5F5;
+    position: relative;
+    overflow: hidden;
+    min-height: 773px;
+    margin-left: 232px; */
+}
+.tabcon {
+	min-height: .01%;
+	overflow-x: auto;
+	padding: 0 14px;
+	padding-bottom: 40px;
 }
 .main .nav {
 	height: 34px;
@@ -186,13 +212,14 @@ a:focus{outline:none;}
 	padding-left: 30px;
 }
 .main .wrap {
-	padding: 12px 50px 142px 12px;
+	padding: 12px 10px 142px 12px;
 }
 .wrap .search {
 	padding-left: 12px;
 }
 .search.mt30 {
-	margin-top: 30px;
+	margin-top: 20px;
+    padding-bottom: 20px;
 }
 .search.sarea {
 	background: #f0f3f4;
@@ -203,11 +230,14 @@ a:focus{outline:none;}
 	padding-top: 16px;
 }
 .search .sel {
-	float: left;
+	display: inline-block;
+	_zoom: 1;
+  _display: inline;
 	width: 65px;
-	padding: 4px 10px;
+	padding: 4px 2px;
 	border: solid 1px #bdbcbc;
 	margin-top: 4px;
+	vertical-align: middle;
 }
 .search .sel.mr30 {
 	margin-right: 30px;
@@ -216,26 +246,32 @@ a:focus{outline:none;}
 	width: 130px;
 }
 .search .txt {
-	float: left;
-	display: block;
+	display: inline-block;
+	_zoom: 1;
+  _display: inline;
     height: 28px;
 	line-height: 28px;
+	vertical-align: middle;
 }
 .search .inp {
-	float: left;
+	display: inline-block;
+	_zoom: 1;
+  _display: inline;
 	width: 130px;
 	padding: 4px 10px;
 	border: solid 1px #bdbcbc;
 	margin-right: 30px;
 	margin-left: 8px;
+	vertical-align: middle;
 }
 .search .inp.date {
 	margin-right: 8px;
 	background: #FFF url('../images/datepicker.png') 106px center no-repeat;
 }
 .search .searchbtn {
-	float: left;
-	display: block;
+	display: inline-block;
+	_zoom: 1;
+  _display: inline;
 	height: 28px;
 	line-height: 28px;
 	padding: 0 20px;
@@ -243,16 +279,18 @@ a:focus{outline:none;}
 	color: #FFF;
 	font-size: 14px;
 	margin-left: 22px;
+	vertical-align: middle;
 }
 .wrap .result {
-	padding: 16px 14px;
+	width: 95%;
+	padding: 16px 24px;
 	background: #FFF;
 }
 .table {
+	cellspacing: 0;
 	border-spacing: 0;
 	border-collapse: collapse;
 	width: 100%;
-    max-width: 100%;
 	margin-bottom: 20px;
 	border-left: solid 1px #d6d6d6;
 	border-top: solid 1px #d6d6d6;
@@ -304,6 +342,7 @@ a:focus{outline:none;}
 	width: 580px;
 	height: 145px;
 	border: solid 1px #bdbcbc;
+	padding: 10px;
 }
 .nbtable .checkarea {
 	width: 580px;
@@ -327,6 +366,8 @@ a:focus{outline:none;}
 .btns.tc {text-align: center;}
 .defbtn {
 	display: inline-block;
+	_zoom: 1;
+  _display: inline;
     height: 28px;
     line-height: 28px;
     padding: 0 20px;
@@ -339,6 +380,8 @@ a:focus{outline:none;}
 }
 .smabtn {
 	display: inline-block;
+	_zoom: 1;
+  _display: inline;
     height: 24px;
     line-height: 24px;
 	width: 72px;
@@ -354,7 +397,9 @@ a:focus{outline:none;}
 	text-align: right;
 }
 .page-comp{
-    display: inline-block;
+	display: inline-block;
+	_zoom: 1;
+  _display: inline;
     padding: 5px;
     user-select: none;
     -webkit-user-select: none;
@@ -362,7 +407,9 @@ a:focus{outline:none;}
     -ms-user-select: none;
 }
 .page-comp div{
-    display: inline-block;
+	display: inline-block;
+	_zoom: 1;
+  _display: inline;
     vertical-align: bottom;
     height: 24px;
     line-height: 24px;
@@ -418,6 +465,8 @@ a:focus{outline:none;}
 }
 .tags span {
 	display: inline-block;
+	_zoom: 1;
+  _display: inline;
 	border-left: solid 4px #7b9aa2;
 	background: #c0eaec;
 	color: #565656;
@@ -463,7 +512,9 @@ a:focus{outline:none;}
 /* options.html */
 .result .tabs {
 	height: 32px;
-	margin-bottom: 14px;
+    margin-bottom: 24px;
+    padding: 0 14px;
+    padding-top: 16px;
 }
 .tabs.tcr {text-align: right;}
 .tabs .tabtn {
@@ -573,13 +624,29 @@ a:focus{outline:none;}
 
 
 .footer {
-	position: absolute;
+	/* position: absolute;
+	display: block;
 	bottom: 0;
+	left: 0; */
 	height: 62px;
-	width: 100%;
 	line-height: 62px;
 	background: #172431;
 	color: #FFF;
 	font-size: 14px;
 	text-align: center;
+
+    position: relative;
+    overflow: hidden;
+    margin-left: 231px;
+}
+.footer p {
+	width: 100%;
+}
+.demo {
+	padding: 0 0 50px;
+    background: #F5F5F5;
+    position: relative;
+    overflow: hidden;
+    min-height: 773px;
+    margin-left: 232px;
 }
