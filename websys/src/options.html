@@ -27,9 +27,22 @@
 	</div>
 	<div class="sidebar">
 		<ul class="menu">
-			<li class="item"><a href="config.html" class="icon config">网络配置</a></li>
-			<li class="item"><a href="newslist.html" class="icon newslist">资讯列表</a></li>
-			<li class="item active"><a href="javascript:;" class="icon options">常量设置</a></li>
+			<li class="item">
+				<a href="javascript:;" class="icon config">资讯管理</a>
+				<div class="smenu">
+					<a class="sitem" href="#">网站配置</a>
+					<a class="sitem" href="#">资讯列表</a>
+					<a class="sitem" href="#">常量设置</a>
+				</div>
+			</li>
+			<li class="item active"><a href="javascript:;" class="icon newslist">系统管理</a></li>
+			<li class="item">
+				<a href="javascript:;" class="icon options">用户管理</a>
+				<div class="smenu">
+					<a class="sitem" href="#">个人信息管理</a>
+					<a class="sitem lastitem" href="#">用户管理</a>
+				</div>
+			</li>
 		</ul>
 	</div>
 	<div class="main">
@@ -191,6 +204,7 @@
 	</div>
 </div>
 <script src="js/jquery.min.js"></script>
+<script src="js/base.js"></script>
 <script>
 (function(){
 	$('#addproperty').on('click', function(){

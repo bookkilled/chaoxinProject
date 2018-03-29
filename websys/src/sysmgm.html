@@ -1,0 +1,104 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta content="width=device-width,minimum-scale=1.00001,maximum-scale=1.00001,user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <!-- UC默认竖屏 ，UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 QQ强制全屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <meta name="format-detection" content="email=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="" rel="stylesheet">
+	<title>系统管理</title>
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div class="system cf">
+	<div class="header">
+		<span class="tit">管理员后台</span>
+	</div>
+	<div class="sidebar">
+		<ul class="menu">
+			<li class="item">
+				<a href="javascript:;" class="icon config">资讯管理</a>
+				<div class="smenu">
+					<a class="sitem" href="#">网站配置</a>
+					<a class="sitem" href="#">资讯列表</a>
+					<a class="sitem" href="#">常量设置</a>
+				</div>
+			</li>
+			<li class="item active"><a href="javascript:;" class="icon newslist">系统管理</a></li>
+			<li class="item">
+				<a href="javascript:;" class="icon options">用户管理</a>
+				<div class="smenu">
+					<a class="sitem" href="#">个人信息管理</a>
+					<a class="sitem lastitem" href="#">用户管理</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="main">
+	<div class="nav"><span class="tag">系统管理</span></div>
+	<div class="wrap">
+		<div class="result">
+			<table class="nbtable" width="100%">
+				<tr style="border-bottom: solid 1px #e5e5e5;">
+					<td valign="top" width="20%" align="right">中文名称：</td>
+					<td width="80%"><div class="default"><input type="text" class="bbnbinp" name="nbname" id="nbname"><span class="addbtn"></div></span></td>
+				</tr>
+				<tr>
+					<td valign="top" align="right">添加检索式：</td>
+					<td><div class="default"><input type="text" class="bbnbinp" name="nbname" id="nbname"><span class="addbtn"></span></div></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<div class="det" id="det"><span style="color:red;">使用说明：</span>
+						<br>通用字段：
+						<br>T=题名（书名、题名），A=作者（责任者），K=关键词，S=文摘（摘要、视频简介）， O=作者单位（作者单位、学位授予单位、专利申请人），Su=主题（题名、关键词、摘要），Z=全部字段 Y=年（出版发行年、学位年度、会议召开年、专利申请年、标准发布年），
+						Clc=中图分类号
+						<br>文献类型：
+						<br>BK=图书，JN=期刊，DT=学位，CP=会议，PT=专利，ST=标准，VI=视频，NP=报纸，TR=科技成果
+						<br>非通用字段(需要加上文献标识才能检索):
+						<br>图书：BKs=丛书名；期刊：JNj=刊名；学位：F=指导老师，DTn=学位，Tf=英文题名，DTa=英文文摘；会议：CPn=会议名称；报纸：NPn=报纸名称；专利：PTt=专利类型；标准：STd=起草单位
+						<br>检索规则说明：
+						<br>（1）运算符号：* 代表并且，| 代表或者， - 代表不包含， "" 代表精确匹配，''代表模糊匹配，用于同一字段内运算；
+						<br>（2）逻辑关系符号：AND（与）、OR（或）、NOT（非），用于字段之间的逻辑关系，前后之间要空一个字节并且只能用大写字母；
+						<br>（3）运算符及逻辑符的优先级相同，若要改变组合的顺序，请使用英文半角括号“()”括起；
+						<br>例一：检索期刊题名包含图书馆或教育，且作者是王伟，出版年范围2000至2013年(含边界)：
+						<br>JN(T=图书馆|教育 AND A=王伟) AND (2000 例二：检索期刊作者单位属于跟“海”或者“海洋”有关的一些相关机构，且主题是海洋，出版年范围2000至2016年（含边界）：
+						JN(O=海洋*研究所 OR O=海*研究所 OR O=海*分局 OR O=海*中心 OR O=大学*海*学院 OR O=大学*海*系 OR O=海*研究室 OR O=海*实验室) AND Su=海洋 AND 2000 （4）外文数据字段的值需要加模糊匹配符号''或者精确匹配符号"" ，如K="cryptography"|'c
+						ipher code'|"Multimedia security"
+						<br><注：所有符号和英文字母，都必须使用英文半角字符<br></div>
+						<a id="showdet" class="showdet" href="javascript:;">展开详细使用说明</a>         
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- 页面底部 -->
+	</div>
+	<div class="footer">Copyright© 2017 单位单位</div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/base.js"></script>
+<script>
+(function(){
+	$('#showdet').on('click',function(){
+		$('#det').slideToggle('slow',function(){
+			$('#showdet').text() == '展开详细使用说明' ? $('#showdet').text('收起详细使用说明') : $('#showdet').text('展开详细使用说明')
+		});
+	});
+})();
+</script>
+</body>
+</html>

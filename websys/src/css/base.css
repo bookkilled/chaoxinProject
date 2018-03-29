@@ -139,14 +139,11 @@ a:focus{outline:none;}
 	padding: 0 2px;
 }
 .menu .item {
-	height: 41px;
-	border-left: 5px solid #283849;
-	padding-left: 56px;
+	/* height: 41px; */
 	line-height: 41px;
-	border-bottom: solid 1px #5e6b77;
 	cursor: pointer;
 }
-.menu .item:hover,.menu .item.active {
+.menu .item a.icon:hover,.menu .item a.icon.active {
 	border-left: solid 5px #3484cd;
 	background: #192c3e;
 }
@@ -156,25 +153,52 @@ a:focus{outline:none;}
 	background-repeat: no-repeat;
 	padding-left: 30px;
 }
-.menu .item .config {
-	background-image: url('../images/icon.png');
-	background-position: 0px -12px;
+.menu .item a.icon {
+	display: block;
+	padding-left: 56px;
+	border-top: solid 1px #5e6b77;
+	border-left: 5px solid #283849;
+	line-height: 39px;
 }
-.menu .item:hover .config,.menu .item.active .config {
+.smenu {}
+.smenu a.sitem {
+	font-size: 14px;
+	line-height: 41px;
+	display: block;
+	padding-left: 56px;
+	color: #3484cd;
+	border-left: 5px solid #283849;
+	border-top: solid 1px #5e6b77;	
+}
+a.lastitem {
+	border-bottom: solid 1px #5e6b77;
+}
+.smenu a.sitem:hover {
+	background: #172431;
+	border-left: solid 5px #3484cd;
+}
+.menu .item a.icon.config {
+	background-image: url('../images/icon.png');
+	background-position: 24px -3px;
+	background-repeat: no-repeat;
+}
+.menu .item a.icon:hover .config,.menu .item a.icon.active .config {
 	background-image: url('../images/icon-hover.png');
 }
-.menu .item .newslist {
+.menu .item a.icon.newslist {
 	background-image: url('../images/icon.png');
-	background-position: 0px -52px;
+	background-position: 24px -43px;
+	background-repeat: no-repeat;
 }
-.menu .item:hover .newslist,.menu .item.active .newslist {
+.menu .item a.icon:hover .newslist,.menu .item a.icon.active .newslist {
 	background-image: url('../images/icon-hover.png');
 }
-.menu .item .options {
+.menu .item a.icon.options {
 	background-image: url('../images/icon.png');
-	background-position: 0px -92px;
+	background-position: 24px -83px;
+	background-repeat: no-repeat;
 }
-.menu .item:hover .options,.menu .item.active .options {
+.menu .item a.icon:hover .options,.menu .item a.icon.active .options {
 	background-image: url('../images/icon-hover.png');
 }
 
@@ -337,6 +361,47 @@ a:focus{outline:none;}
 	padding-left: 10px;
 	border: solid 1px #bdbcbc;
 	overflow: hidden;
+}
+.nbtable .bnbinp {
+	width: 380px;
+	height: 28px;
+	line-height: 28px;
+	padding-left: 10px;
+	border: solid 1px #bdbcbc;
+	overflow: hidden;
+}
+.nbtable .bbnbinp {
+	width: 380px;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 10px;
+	border: solid 1px #bdbcbc;
+	overflow: hidden;
+}
+.nbtable .showdet {
+	color: #0f82ea;
+	font-size: 14px;
+	margin: 14px 0;
+	display: block;
+}
+.nbtable .det {
+	display: none;
+	font-size: 12px;
+	color: #8d8e8f;
+}
+.nbtable .delbtn {
+	padding: 8px;
+	background: url('../images/del.png') center center no-repeat;
+	vertical-align: middle;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.nbtable .addbtn {
+	padding: 8px;
+	background: url('../images/add.png') center center no-repeat;
+	vertical-align: middle;
+	margin-left: 10px;
+	cursor: pointer;
 }
 .nbtable .nbtxta {
 	width: 580px;
